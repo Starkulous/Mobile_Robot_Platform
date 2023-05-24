@@ -1,7 +1,7 @@
-#define enableLeft 2
-#define pwmLeft 3
-#define enableRight 4
-#define pwmRight 5
+#define enableLeft 11
+#define pwmLeft 10
+#define enableRight 5
+#define pwmRight 6
 
 void setup() {
     pinMode(enableLeft, OUTPUT);
@@ -18,8 +18,14 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
-digitalWrite(enableLeft, LOW);
+digitalWrite(enableLeft, HIGH);
 analogWrite(pwmLeft, 0);
 digitalWrite(enableRight, HIGH);
-analogWrite(pwmRight, 255);
+analogWrite(pwmRight, 50);
+delay(1000);
+digitalWrite(enableLeft, HIGH);
+analogWrite(pwmLeft, 50);
+digitalWrite(enableRight, HIGH);
+analogWrite(pwmRight, 0);
+delay(1000);
 }

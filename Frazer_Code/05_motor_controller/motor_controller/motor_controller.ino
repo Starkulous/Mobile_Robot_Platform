@@ -1,10 +1,10 @@
 #include <EthernetENC.h>
 #include <EthernetUdp.h>
 
-#define enableLeft 2
-#define enableRight 3
-#define pwmLeft 4
-#define pwmRight 5
+#define enableLeft 11
+#define enableRight 5
+#define pwmLeft 10
+#define pwmRight 6
 
 int motorState = 0; // + driving, 0 stopping, - reversing
 
@@ -57,7 +57,7 @@ void loop()
     {
         case +1:
         {
-            // left
+            // Forward
 
             digitalWrite(enableLeft, HIGH);
             digitalWrite(enableRight, HIGH);
@@ -67,7 +67,7 @@ void loop()
         }
         case -1:
         {
-            // right
+            // reverse
 
             digitalWrite(enableLeft, HIGH);
             digitalWrite(enableRight, HIGH);
