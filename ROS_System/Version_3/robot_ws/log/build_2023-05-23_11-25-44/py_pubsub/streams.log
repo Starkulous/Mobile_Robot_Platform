@@ -1,0 +1,40 @@
+[2.966s] Invoking command in '/home/joe/robot_ws/src/py_pubsub': PYTHONPATH=/home/joe/robot_ws/build/py_pubsub/prefix_override:/home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages: /usr/bin/python3 setup.py egg_info --egg-base ../../build/py_pubsub build --build-base /home/joe/robot_ws/build/py_pubsub/build install --record /home/joe/robot_ws/build/py_pubsub/install.log --install-scripts $base/lib/py_pubsub --single-version-externally-managed
+[3.862s] running egg_info
+[3.865s] creating ../../build/py_pubsub/py_pubsub.egg-info
+[3.865s] writing ../../build/py_pubsub/py_pubsub.egg-info/PKG-INFO
+[3.866s] writing dependency_links to ../../build/py_pubsub/py_pubsub.egg-info/dependency_links.txt
+[3.866s] writing entry points to ../../build/py_pubsub/py_pubsub.egg-info/entry_points.txt
+[3.867s] writing requirements to ../../build/py_pubsub/py_pubsub.egg-info/requires.txt
+[3.867s] writing top-level names to ../../build/py_pubsub/py_pubsub.egg-info/top_level.txt
+[3.880s] writing manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[4.031s] reading manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[4.034s] writing manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[4.035s] running build
+[4.035s] running build_py
+[4.036s] creating /home/joe/robot_ws/build/py_pubsub/build
+[4.036s] creating /home/joe/robot_ws/build/py_pubsub/build/lib
+[4.037s] creating /home/joe/robot_ws/build/py_pubsub/build/lib/py_pubsub
+[4.037s] copying py_pubsub/joystick.py -> /home/joe/robot_ws/build/py_pubsub/build/lib/py_pubsub
+[4.038s] copying py_pubsub/controller.py -> /home/joe/robot_ws/build/py_pubsub/build/lib/py_pubsub
+[4.038s] copying py_pubsub/__init__.py -> /home/joe/robot_ws/build/py_pubsub/build/lib/py_pubsub
+[4.038s] running install
+[4.040s] running install_lib
+[4.044s] creating /home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub
+[4.045s] copying /home/joe/robot_ws/build/py_pubsub/build/lib/py_pubsub/joystick.py -> /home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub
+[4.045s] copying /home/joe/robot_ws/build/py_pubsub/build/lib/py_pubsub/controller.py -> /home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub
+[4.046s] copying /home/joe/robot_ws/build/py_pubsub/build/lib/py_pubsub/__init__.py -> /home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub
+[4.047s] byte-compiling /home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub/joystick.py to joystick.cpython-38.pyc
+[4.056s] byte-compiling /home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub/controller.py to controller.cpython-38.pyc
+[4.058s] byte-compiling /home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub/__init__.py to __init__.cpython-38.pyc
+[4.059s] running install_data
+[4.061s] creating /home/joe/robot_ws/install/py_pubsub/share/ament_index
+[4.061s] creating /home/joe/robot_ws/install/py_pubsub/share/ament_index/resource_index
+[4.062s] creating /home/joe/robot_ws/install/py_pubsub/share/ament_index/resource_index/packages
+[4.062s] copying resource/py_pubsub -> /home/joe/robot_ws/install/py_pubsub/share/ament_index/resource_index/packages
+[4.062s] copying package.xml -> /home/joe/robot_ws/install/py_pubsub/share/py_pubsub
+[4.063s] running install_egg_info
+[4.067s] Copying ../../build/py_pubsub/py_pubsub.egg-info to /home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub-0.0.0-py3.8.egg-info
+[4.071s] running install_scripts
+[4.135s] Installing controller script to /home/joe/robot_ws/install/py_pubsub/lib/py_pubsub
+[4.136s] Installing robot script to /home/joe/robot_ws/install/py_pubsub/lib/py_pubsub
+[4.137s] writing list of installed files to '/home/joe/robot_ws/build/py_pubsub/install.log'

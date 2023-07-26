@@ -1,0 +1,4 @@
+[console_scripts]
+controller = py_pubsub.joystick:main
+robot = py_pubsub.controller:main
+

@@ -1,0 +1,2 @@
+Invoking command in '/home/joe/robot_ws/build/temp_package': /usr/bin/cmake /home/joe/robot_ws/src/temp_package -DCMAKE_INSTALL_PREFIX=/home/joe/robot_ws/install/temp_package
+Invoked command in '/home/joe/robot_ws/build/temp_package' returned '1': /usr/bin/cmake /home/joe/robot_ws/src/temp_package -DCMAKE_INSTALL_PREFIX=/home/joe/robot_ws/install/temp_package
