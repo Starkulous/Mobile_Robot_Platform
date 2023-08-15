@@ -11,14 +11,14 @@
 int PWMValue;
 
 //// Right
-//  byte mac[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x03};
-//  IPAddress ip(192, 168, 137, 3);
-//  unsigned int localPort = 8888;
+ byte mac[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x03};
+ IPAddress ip(192, 168, 137, 3);
+ unsigned int localPort = 8888;
 
 // left
-byte mac[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x04};
-IPAddress ip(192, 168, 137, 4);
-unsigned int localPort = 8888;
+// byte mac[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x04};
+// IPAddress ip(192, 168, 137, 4);
+// unsigned int localPort = 8888;
 
 char packetBuffer[PACKET_SIZE];
 char ReplyBuffer[] = "OK";
@@ -116,17 +116,17 @@ void loop()
             Serial.println("Turning Left!");
 
             // Right Motor
-            // digitalWrite(enableLeft, HIGH);
-            // analogWrite(pwmLeft, PWMValue);
-            // digitalWrite(enableRight, HIGH);
-            // analogWrite(pwmRight, 0);
+            digitalWrite(enableLeft, HIGH);
+            analogWrite(pwmLeft, PWMValue);
+            digitalWrite(enableRight, HIGH);
+            analogWrite(pwmRight, 0);
 
             // Left Motor
 
-           digitalWrite(enableLeft, HIGH);
-           analogWrite(pwmLeft, 0);
-           digitalWrite(enableRight, HIGH);
-           analogWrite(pwmRight, PWMValue);
+          //  digitalWrite(enableLeft, HIGH);
+          //  analogWrite(pwmLeft, 0);
+          //  digitalWrite(enableRight, HIGH);
+          //  analogWrite(pwmRight, PWMValue);
         }
         if(strcmp(packetBuffer, "right") == 0)
         {
@@ -134,16 +134,16 @@ void loop()
             Serial.println("Turning Right!");
 
             //Right Motor
-            // digitalWrite(enableLeft, HIGH);
-            // analogWrite(pwmLeft, 0);
-            // digitalWrite(enableRight, HIGH);
-            // analogWrite(pwmRight, PWMValue);
+            digitalWrite(enableLeft, HIGH);
+            analogWrite(pwmLeft, 0);
+            digitalWrite(enableRight, HIGH);
+            analogWrite(pwmRight, PWMValue);
 
             //Left Motor
-           digitalWrite(enableLeft, HIGH);
-           analogWrite(pwmLeft, PWMValue);
-           digitalWrite(enableRight, HIGH);
-           analogWrite(pwmRight, 0);
+          //  digitalWrite(enableLeft, HIGH);
+          //  analogWrite(pwmLeft, PWMValue);
+          //  digitalWrite(enableRight, HIGH);
+          //  analogWrite(pwmRight, 0);
         }
         if(strcmp(packetBuffer, "increase") == 0)
         {
