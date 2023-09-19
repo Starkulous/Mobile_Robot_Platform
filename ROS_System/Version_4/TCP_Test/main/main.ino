@@ -29,7 +29,7 @@ void loop()
       if (client.available()) 
       {
         char c = client.read();
-        Serial.println("c"); // Print received character (byte)
+        Serial.println(c); // Print received character (byte)
         client.write("OK");
       }
     }
