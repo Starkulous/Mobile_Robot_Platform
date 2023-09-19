@@ -1,0 +1,25 @@
+[2.752s] Invoking command in '/home/joe/robot_ws/src/py_pubsub': PYTHONPATH=/home/joe/robot_ws/build/py_pubsub/prefix_override:/home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages: /usr/bin/python3 setup.py egg_info --egg-base ../../build/py_pubsub build --build-base /home/joe/robot_ws/build/py_pubsub/build install --record /home/joe/robot_ws/build/py_pubsub/install.log --install-scripts $base/lib/py_pubsub --single-version-externally-managed
+[3.636s] running egg_info
+[3.638s] writing ../../build/py_pubsub/py_pubsub.egg-info/PKG-INFO
+[3.639s] writing dependency_links to ../../build/py_pubsub/py_pubsub.egg-info/dependency_links.txt
+[3.639s] writing entry points to ../../build/py_pubsub/py_pubsub.egg-info/entry_points.txt
+[3.640s] writing requirements to ../../build/py_pubsub/py_pubsub.egg-info/requires.txt
+[3.640s] writing top-level names to ../../build/py_pubsub/py_pubsub.egg-info/top_level.txt
+[3.812s] reading manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[3.816s] writing manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[3.817s] running build
+[3.817s] running build_py
+[3.818s] copying py_pubsub/controller.py -> /home/joe/robot_ws/build/py_pubsub/build/lib/py_pubsub
+[3.818s] running install
+[3.821s] running install_lib
+[3.825s] copying /home/joe/robot_ws/build/py_pubsub/build/lib/py_pubsub/controller.py -> /home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub
+[3.827s] byte-compiling /home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub/controller.py to controller.cpython-38.pyc
+[3.835s] running install_data
+[3.837s] running install_egg_info
+[3.844s] removing '/home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub-0.0.0-py3.8.egg-info' (and everything under it)
+[3.846s] Copying ../../build/py_pubsub/py_pubsub.egg-info to /home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub-0.0.0-py3.8.egg-info
+[3.850s] running install_scripts
+[3.921s] Installing controller script to /home/joe/robot_ws/install/py_pubsub/lib/py_pubsub
+[3.921s] Installing robot script to /home/joe/robot_ws/install/py_pubsub/lib/py_pubsub
+[3.922s] writing list of installed files to '/home/joe/robot_ws/build/py_pubsub/install.log'
+[4.030s] Invoked command in '/home/joe/robot_ws/src/py_pubsub' returned '0': PYTHONPATH=/home/joe/robot_ws/build/py_pubsub/prefix_override:/home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages: /usr/bin/python3 setup.py egg_info --egg-base ../../build/py_pubsub build --build-base /home/joe/robot_ws/build/py_pubsub/build install --record /home/joe/robot_ws/build/py_pubsub/install.log --install-scripts $base/lib/py_pubsub --single-version-externally-managed

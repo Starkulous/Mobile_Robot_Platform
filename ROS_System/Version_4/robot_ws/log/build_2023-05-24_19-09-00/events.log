@@ -1,0 +1,75 @@
+[0.000000] (-) TimerEvent: {}
+[0.001666] (py_pubsub) JobQueued: {'identifier': 'py_pubsub', 'dependencies': OrderedDict()}
+[0.001832] (py_pubsub) JobStarted: {'identifier': 'py_pubsub'}
+[0.099544] (-) TimerEvent: {}
+[0.201274] (-) TimerEvent: {}
+[0.302154] (-) TimerEvent: {}
+[0.402935] (-) TimerEvent: {}
+[0.504987] (-) TimerEvent: {}
+[0.605639] (-) TimerEvent: {}
+[0.706680] (-) TimerEvent: {}
+[0.807477] (-) TimerEvent: {}
+[0.908147] (-) TimerEvent: {}
+[1.008885] (-) TimerEvent: {}
+[1.109725] (-) TimerEvent: {}
+[1.213319] (-) TimerEvent: {}
+[1.314214] (-) TimerEvent: {}
+[1.415277] (-) TimerEvent: {}
+[1.515969] (-) TimerEvent: {}
+[1.617003] (-) TimerEvent: {}
+[1.718033] (-) TimerEvent: {}
+[1.818663] (-) TimerEvent: {}
+[1.919697] (-) TimerEvent: {}
+[2.020321] (-) TimerEvent: {}
+[2.121030] (-) TimerEvent: {}
+[2.222077] (-) TimerEvent: {}
+[2.322716] (-) TimerEvent: {}
+[2.423419] (-) TimerEvent: {}
+[2.524482] (-) TimerEvent: {}
+[2.625579] (-) TimerEvent: {}
+[2.726699] (-) TimerEvent: {}
+[2.827457] (-) TimerEvent: {}
+[2.928271] (-) TimerEvent: {}
+[3.029047] (-) TimerEvent: {}
+[3.068824] (py_pubsub) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/py_pubsub', 'build', '--build-base', '/home/joe/robot_ws/build/py_pubsub/build', 'install', '--record', '/home/joe/robot_ws/build/py_pubsub/install.log', '--install-scripts', '$base/lib/py_pubsub', '--single-version-externally-managed'], 'cwd': '/home/joe/robot_ws/src/py_pubsub', 'env': {'SUDO_GID': '1000', 'MAIL': '/var/mail/root', 'LANGUAGE': 'en_NZ:en', 'USER': 'root', 'HOME': '/root', 'COLORTERM': 'truecolor', 'SUDO_UID': '1000', 'LOGNAME': 'root', 'TERM': 'xterm-256color', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SUDO_COMMAND': '/usr/bin/colcon build', 'SHELL': '/bin/bash', 'SUDO_USER': 'joe', 'LC_ALL': 'en_US.UTF-8', 'PWD': '/home/joe/robot_ws/build/py_pubsub', 'COLCON': '1', 'PYTHONPATH': '/home/joe/robot_ws/build/py_pubsub/prefix_override:/home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages:'}, 'shell': False}
+[3.129289] (-) TimerEvent: {}
+[3.230211] (-) TimerEvent: {}
+[3.330913] (-) TimerEvent: {}
+[3.431630] (-) TimerEvent: {}
+[3.532354] (-) TimerEvent: {}
+[3.633058] (-) TimerEvent: {}
+[3.733763] (-) TimerEvent: {}
+[3.834450] (-) TimerEvent: {}
+[3.935334] (-) TimerEvent: {}
+[3.948164] (py_pubsub) StdoutLine: {'line': b'running egg_info\n'}
+[3.951707] (py_pubsub) StdoutLine: {'line': b'writing ../../build/py_pubsub/py_pubsub.egg-info/PKG-INFO\n'}
+[3.954974] (py_pubsub) StdoutLine: {'line': b'writing dependency_links to ../../build/py_pubsub/py_pubsub.egg-info/dependency_links.txt\n'}
+[3.955863] (py_pubsub) StdoutLine: {'line': b'writing entry points to ../../build/py_pubsub/py_pubsub.egg-info/entry_points.txt\n'}
+[3.956718] (py_pubsub) StdoutLine: {'line': b'writing requirements to ../../build/py_pubsub/py_pubsub.egg-info/requires.txt\n'}
+[3.957241] (py_pubsub) StdoutLine: {'line': b'writing top-level names to ../../build/py_pubsub/py_pubsub.egg-info/top_level.txt\n'}
+[4.035539] (-) TimerEvent: {}
+[4.131149] (py_pubsub) StdoutLine: {'line': b"reading manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'\n"}
+[4.135666] (-) TimerEvent: {}
+[4.136690] (py_pubsub) StdoutLine: {'line': b"writing manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'\n"}
+[4.137381] (py_pubsub) StdoutLine: {'line': b'running build\n'}
+[4.139919] (py_pubsub) StdoutLine: {'line': b'running build_py\n'}
+[4.143490] (py_pubsub) StdoutLine: {'line': b'copying py_pubsub/controller.py -> /home/joe/robot_ws/build/py_pubsub/build/lib/py_pubsub\n'}
+[4.147350] (py_pubsub) StdoutLine: {'line': b'running install\n'}
+[4.151169] (py_pubsub) StdoutLine: {'line': b'running install_lib\n'}
+[4.155330] (py_pubsub) StdoutLine: {'line': b'copying /home/joe/robot_ws/build/py_pubsub/build/lib/py_pubsub/controller.py -> /home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub\n'}
+[4.157754] (py_pubsub) StdoutLine: {'line': b'byte-compiling /home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub/controller.py to controller.cpython-38.pyc\n'}
+[4.166609] (py_pubsub) StdoutLine: {'line': b'running install_data\n'}
+[4.169216] (py_pubsub) StdoutLine: {'line': b'running install_egg_info\n'}
+[4.175454] (py_pubsub) StdoutLine: {'line': b"removing '/home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[4.177225] (py_pubsub) StdoutLine: {'line': b'Copying ../../build/py_pubsub/py_pubsub.egg-info to /home/joe/robot_ws/install/py_pubsub/lib/python3.8/site-packages/py_pubsub-0.0.0-py3.8.egg-info\n'}
+[4.183539] (py_pubsub) StdoutLine: {'line': b'running install_scripts\n'}
+[4.235878] (-) TimerEvent: {}
+[4.252151] (py_pubsub) StdoutLine: {'line': b'Installing controller script to /home/joe/robot_ws/install/py_pubsub/lib/py_pubsub\n'}
+[4.253317] (py_pubsub) StdoutLine: {'line': b'Installing robot script to /home/joe/robot_ws/install/py_pubsub/lib/py_pubsub\n'}
+[4.254595] (py_pubsub) StdoutLine: {'line': b"writing list of installed files to '/home/joe/robot_ws/build/py_pubsub/install.log'\n"}
+[4.336067] (-) TimerEvent: {}
+[4.357119] (py_pubsub) CommandEnded: {'returncode': 0}
+[4.436241] (-) TimerEvent: {}
+[4.537009] (-) TimerEvent: {}
+[4.552517] (py_pubsub) JobEnded: {'identifier': 'py_pubsub', 'rc': 0}
+[4.556209] (-) EventReactorShutdown: {}

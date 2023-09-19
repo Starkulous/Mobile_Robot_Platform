@@ -1,0 +1,35 @@
+[0.910s] Invoking command in '/home/joe/robot_ws/build/temp_package': /usr/bin/cmake /home/joe/robot_ws/src/temp_package -DCMAKE_INSTALL_PREFIX=/home/joe/robot_ws/install/temp_package
+[1.534s] -- The C compiler identification is GNU 9.4.0
+[2.155s] -- The CXX compiler identification is GNU 9.4.0
+[2.186s] -- Check for working C compiler: /usr/bin/cc
+[2.439s] -- Check for working C compiler: /usr/bin/cc -- works
+[2.446s] -- Detecting C compiler ABI info
+[2.867s] -- Detecting C compiler ABI info - done
+[2.924s] -- Detecting C compile features
+[2.926s] -- Detecting C compile features - done
+[2.939s] -- Check for working CXX compiler: /usr/bin/c++
+[3.215s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[3.219s] -- Detecting CXX compiler ABI info
+[3.498s] -- Detecting CXX compiler ABI info - done
+[3.547s] -- Detecting CXX compile features
+[3.550s] -- Detecting CXX compile features - done
+[3.609s] CMake Error at CMakeLists.txt:19 (find_package):
+[3.610s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[3.610s]   has asked CMake to find a package configuration file provided by
+[3.611s]   "ament_cmake", but CMake did not find one.
+[3.611s] 
+[3.611s]   Could not find a package configuration file provided by "ament_cmake" with
+[3.612s]   any of the following names:
+[3.612s] 
+[3.613s]     ament_cmakeConfig.cmake
+[3.613s]     ament_cmake-config.cmake
+[3.614s] 
+[3.614s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[3.614s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[3.615s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[3.615s]   has been installed.
+[3.616s] 
+[3.616s] 
+[3.617s] -- Configuring incomplete, errors occurred!
+[3.617s] See also "/home/joe/robot_ws/build/temp_package/CMakeFiles/CMakeOutput.log".
+[3.622s] Invoked command in '/home/joe/robot_ws/build/temp_package' returned '1': /usr/bin/cmake /home/joe/robot_ws/src/temp_package -DCMAKE_INSTALL_PREFIX=/home/joe/robot_ws/install/temp_package
