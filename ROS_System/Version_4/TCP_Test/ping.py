@@ -1,31 +1,26 @@
-import sys
-import os
-
 import socket
 
 def main():
-
-    serverIP = "192.168.137.3"
+    serverIP = '192.168.137.3'
     serverPort = 8888
     bufferSize = 576
 
     msg = "Hello"
-    bytesToSend = str.encode(msg)
+    bytesToSend = msg.encode()
 
-    TCPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
-
-    TCPClientSocket.connect((serverIP, serverPort)) 
-    print("Connected to {}:{}".format(serverIP, serverPort))
-
-    TCPClientSocket.sendall(bytesToSend)  
-    print("Sent: {}".format(msg))
-
-    msgFromServer = TCPClientSocket.recv(bufferSize)
-    print("Received: {}".format(msgFromServer.decode()))
+    TCPClientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
-    return 0
+    try:
+        TCPClientSocket.connect((serverIP, serverPort))
+        print("Connected to server")
 
+        TCPClientSocket.sendall(bytesToSend)  
+
+        received_data = TCPClientSocket.recv(bufferSize) 
+        print("Received:", received_data.decode())
+
+    except socket.error as e:
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
-
-    sys.exit(main())
+    main()

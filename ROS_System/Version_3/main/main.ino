@@ -11,14 +11,14 @@
 int PWMValue;
 
 // Right
-byte mac[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x03};
-IPAddress ip(192, 168, 137, 3);
-unsigned int localPort = 8888;
+// byte mac[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x03};
+// IPAddress ip(192, 168, 137, 3);
+// unsigned int localPort = 8888;
 
 // left
-// byte mac[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x04};
-// IPAddress ip(192, 168, 137, 4);
-// unsigned int localPort = 8888;
+byte mac[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x04};
+IPAddress ip(192, 168, 137, 4);
+unsigned int localPort = 8888;
 
 char packetBuffer[PACKET_SIZE];
 char ReplyBuffer[] = "OK";
@@ -89,29 +89,29 @@ void loop()
     {
       Serial.println("Driving!");
       //left
-      // digitalWrite(enableLeft, HIGH);
-      // analogWrite(pwmLeft, 0);
-      // digitalWrite(enableRight, HIGH);
-      // analogWrite(pwmRight, PWMValue);
-      //right
       digitalWrite(enableLeft, HIGH);
-      analogWrite(pwmLeft, PWMValue);
+      analogWrite(pwmLeft, 0);
       digitalWrite(enableRight, HIGH);
-      analogWrite(pwmRight, 0);
+      analogWrite(pwmRight, PWMValue);
+      //right
+      // digitalWrite(enableLeft, HIGH);
+      // analogWrite(pwmLeft, PWMValue);
+      // digitalWrite(enableRight, HIGH);
+      // analogWrite(pwmRight, 0);
     } 
     if(strcmp(packetBuffer, "reverse") == 0)
     { 
       Serial.println("Reversing!");
       //left
-      // digitalWrite(enableLeft, HIGH);
-      // analogWrite(pwmLeft, PWMValue);
-      // digitalWrite(enableRight, HIGH);
-      // analogWrite(pwmRight, 0);
-      //right
       digitalWrite(enableLeft, HIGH);
-      analogWrite(pwmLeft, 0);
+      analogWrite(pwmLeft, PWMValue);
       digitalWrite(enableRight, HIGH);
-      analogWrite(pwmRight, PWMValue);
+      analogWrite(pwmRight, 0);
+      //right
+      // digitalWrite(enableLeft, HIGH);
+      // analogWrite(pwmLeft, 0);
+      // digitalWrite(enableRight, HIGH);
+      // analogWrite(pwmRight, PWMValue);
     }
 
     if(strcmp(packetBuffer, "left") == 0)

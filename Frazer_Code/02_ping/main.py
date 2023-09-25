@@ -5,7 +5,7 @@ import socket
 
 def main():
 
-    serverIP = "169.254.1.3"
+    serverIP = "192.168.137.4"
     serverPort = 8888
     bufferSize = 576
 
