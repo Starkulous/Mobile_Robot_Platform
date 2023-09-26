@@ -1,5 +1,5 @@
-#include <EthernetENC.h>
-#include <EthernetUdp.h>
+#include <SPI.h>
+#include <Ethernet.h>
 
 #define enableLeft 4
 #define pwmLeft 6
@@ -20,10 +20,7 @@ unsigned int localPort = 8888;
 // IPAddress ip(192, 168, 137, 4);
 // unsigned int localPort = 8888;
 
-char packetBuffer[PACKET_SIZE];
-char ReplyBuffer[] = "OK";
-
-EthernetUDP Udp;
+EthernetServer server(serverPort);
 
 void setup()
 {
@@ -40,118 +37,92 @@ void setup()
   PWMValue = 100;
 
   Ethernet.begin(mac, ip);
-
+  server.begin();
   Serial.begin(115200);
   while (!Serial){}
-  
-  Udp.begin(localPort);
 }
 
 void loop()
 {
-  int packetSize = Udp.parsePacket();
+  EthernetClient client = server.available();
 
-  if (packetSize)
+  if (client)
   {
-    Serial.print("Received packet of size ");
-    Serial.println(packetSize);
-    Serial.print("From ");
-    IPAddress remote = Udp.remoteIP();
-    for (int i = 0; i < 4; i++)
+    if(client.available())
     {
-      Serial.print(remote[i], DEC);
-      if (i < 3)
+      if(client.read() == 'S') 
       {
-        Serial.print(".");
+        Serial.println("Stopping!");
+        
+        digitalWrite(enableLeft, LOW);
+        analogWrite(pwmLeft, 0);
+        digitalWrite(enableRight, LOW);
+        analogWrite(pwmRight, 0);
+      }
+      if (client.read() == 'F')
+      {
+        Serial.println("Driving!");
+        //left
+        // digitalWrite(enableLeft, HIGH);
+        // analogWrite(pwmLeft, 0);
+        // digitalWrite(enableRight, HIGH);
+        // analogWrite(pwmRight, PWMValue);
+        //right
+        digitalWrite(enableLeft, HIGH);
+        analogWrite(pwmLeft, PWMValue);
+        digitalWrite(enableRight, HIGH);
+        analogWrite(pwmRight, 0);
+      } 
+      if(client.read() == 'B')
+      { 
+        Serial.println("Reversing!");
+        //left
+        // digitalWrite(enableLeft, HIGH);
+        // analogWrite(pwmLeft, PWMValue);
+        // digitalWrite(enableRight, HIGH);
+        // analogWrite(pwmRight, 0);
+        //right
+        digitalWrite(enableLeft, HIGH);
+        analogWrite(pwmLeft, 0);
+        digitalWrite(enableRight, HIGH);
+        analogWrite(pwmRight, PWMValue);
+      }
+
+      if(client.read() == 'L')
+      {
+        Serial.println("Turning Left!");
+
+        digitalWrite(enableLeft, HIGH);
+        analogWrite(pwmLeft, PWMValue);
+        digitalWrite(enableRight, HIGH);
+        analogWrite(pwmRight, 0);
+      }
+      if(client.read() == 'R')
+      {
+        Serial.println("Turning Right!");
+
+        digitalWrite(enableLeft, HIGH);
+        analogWrite(pwmLeft, 0);
+        digitalWrite(enableRight, HIGH);
+        analogWrite(pwmRight, PWMValue);
+      }
+      if(client.read() == 'P')
+      {
+        Serial.println("increasing PWM");
+        if (PWMValue < 255)
+        {
+          PWMValue = PWMValue + 5;
+        }          
+      }
+      if(client.read() == 'N')
+      {
+        Serial.println("decreasing PWM");
+        if (PWMValue > 0)
+        {
+          PWMValue = PWMValue - 5;
+        }
       }
     }
-    Serial.print(", port ");
-    Serial.println(Udp.remotePort());
-
-    Udp.read(packetBuffer, PACKET_SIZE);
-    Serial.println("Contents:");
-    Serial.println(packetBuffer);
-    
-    Udp.beginPacket(Udp.remoteIP(), Udp.remotePort());
-    Udp.write(ReplyBuffer);
-    Udp.endPacket();
-
-    if(strcmp(packetBuffer, "stop") == 0) 
-    {
-      Serial.println("Stopping!");
-      
-      digitalWrite(enableLeft, LOW);
-      analogWrite(pwmLeft, 0);
-      digitalWrite(enableRight, LOW);
-      analogWrite(pwmRight, 0);
-    }
-    if (strcmp(packetBuffer, "forward") == 0)
-    {
-      Serial.println("Driving!");
-      //left
-      // digitalWrite(enableLeft, HIGH);
-      // analogWrite(pwmLeft, 0);
-      // digitalWrite(enableRight, HIGH);
-      // analogWrite(pwmRight, PWMValue);
-      //right
-      digitalWrite(enableLeft, HIGH);
-      analogWrite(pwmLeft, PWMValue);
-      digitalWrite(enableRight, HIGH);
-      analogWrite(pwmRight, 0);
-    } 
-    if(strcmp(packetBuffer, "reverse") == 0)
-    { 
-      Serial.println("Reversing!");
-      //left
-      // digitalWrite(enableLeft, HIGH);
-      // analogWrite(pwmLeft, PWMValue);
-      // digitalWrite(enableRight, HIGH);
-      // analogWrite(pwmRight, 0);
-      //right
-      digitalWrite(enableLeft, HIGH);
-      analogWrite(pwmLeft, 0);
-      digitalWrite(enableRight, HIGH);
-      analogWrite(pwmRight, PWMValue);
-    }
-
-    if(strcmp(packetBuffer, "left") == 0)
-    {
-      Serial.println("Turning Left!");
-
-      digitalWrite(enableLeft, HIGH);
-      analogWrite(pwmLeft, PWMValue);
-      digitalWrite(enableRight, HIGH);
-      analogWrite(pwmRight, 0);
-    }
-    if(strcmp(packetBuffer, "right") == 0)
-    {
-      Serial.println("Turning Right!");
-
-      digitalWrite(enableLeft, HIGH);
-      analogWrite(pwmLeft, 0);
-      digitalWrite(enableRight, HIGH);
-      analogWrite(pwmRight, PWMValue);
-    }
-    if(strcmp(packetBuffer, "increase") == 0)
-    {
-      Serial.println("increasing PWM");
-      if (PWMValue < 255)
-      {
-        PWMValue = PWMValue + 5;
-      }          
-    }
-    if(strcmp(packetBuffer, "decrease") == 0)
-    {
-      Serial.println("decreasing PWM");
-      if (PWMValue > 0)
-      {
-        PWMValue = PWMValue - 5;
-      }
-    }
-  }
-
-  for (size_t i = 0; i < PACKET_SIZE; i++)
-  {
-    packetBuffer[i] = 0;
+    client.stop();
   }
 }

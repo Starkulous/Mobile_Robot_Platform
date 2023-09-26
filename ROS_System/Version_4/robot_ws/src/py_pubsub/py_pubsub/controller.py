@@ -30,87 +30,100 @@ class ControllerSubscriber(Node):
 
         self.get_logger().info("Received: {}".format(msg.data))
         
-        UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
+        TCPClientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         serverPort = 8888
         bufferSize = 576
 
         if(msg.data[0] == 1.0):
             serverIP = "192.168.137.3"
-            msg = "reverse"
+            msg = "B"
             bytesToSend = str.encode(msg)
-            UDPClientSocket.sendto(bytesToSend, (serverIP, serverPort))
+            TCPClientSocket.connect((serverIP, serverPort))
+            TCPClientSocket.sendall(bytesToSend) 
             
             serverIP = "192.168.137.4"
-            msg = "reverse"
+            msg = "B"
             bytesToSend = str.encode(msg)
-            UDPClientSocket.sendto(bytesToSend, (serverIP, serverPort))
+            TCPClientSocket.connect((serverIP, serverPort))
+            TCPClientSocket.sendall(bytesToSend)
             
         elif(msg.data[1] == 1.0):
             serverIP = "192.168.137.3"
-            msg = "right"
+            msg = "R"
             bytesToSend = str.encode(msg)
-            UDPClientSocket.sendto(bytesToSend, (serverIP, serverPort))
+            TCPClientSocket.connect((serverIP, serverPort))
+            TCPClientSocket.sendall(bytesToSend)
 
             serverIP = "192.168.137.4"
-            msg = "right"
+            msg = "R"
             bytesToSend = str.encode(msg)
-            UDPClientSocket.sendto(bytesToSend, (serverIP, serverPort))
+            TCPClientSocket.connect((serverIP, serverPort))
+            TCPClientSocket.sendall(bytesToSend)
 
         elif(msg.data[3] == 1.0):
             serverIP = "192.168.137.3"
-            msg = "left"
+            msg = "L"
             bytesToSend = str.encode(msg)
-            UDPClientSocket.sendto(bytesToSend, (serverIP, serverPort))
+            TCPClientSocket.connect((serverIP, serverPort))
+            TCPClientSocket.sendall(bytesToSend)
 
             serverIP = "192.168.137.4"
-            msg = "left"
+            msg = "L"
             bytesToSend = str.encode(msg)
-            UDPClientSocket.sendto(bytesToSend, (serverIP, serverPort))
+            TCPClientSocket.connect((serverIP, serverPort))
+            TCPClientSocket.sendall(bytesToSend)
 
         elif(msg.data[4] == 1.0):
             serverIP = "192.168.137.3"
-            msg = "forward"
+            msg = "F"
             bytesToSend = str.encode(msg)
-            UDPClientSocket.sendto(bytesToSend, (serverIP, serverPort))
+            TCPClientSocket.connect((serverIP, serverPort))
+            TCPClientSocket.sendall(bytesToSend)
 
             serverIP = "192.168.137.4"
-            msg = "forward"
+            msg = "F"
             bytesToSend = str.encode(msg)
-            UDPClientSocket.sendto(bytesToSend, (serverIP, serverPort))
+            TCPClientSocket.connect((serverIP, serverPort))
+            TCPClientSocket.sendall(bytesToSend)
 
         elif(msg.data[6] == 1.0):
             serverIP = "192.168.137.3"
-            msg = "decrease"
+            msg = "N"
             bytesToSend = str.encode(msg)
-            UDPClientSocket.sendto(bytesToSend, (serverIP, serverPort))
+            TCPClientSocket.connect((serverIP, serverPort))
+            TCPClientSocket.sendall(bytesToSend)
 
             serverIP = "192.168.137.4"
-            msg = "decrease"
+            msg = "N"
             bytesToSend = str.encode(msg)
-            UDPClientSocket.sendto(bytesToSend, (serverIP, serverPort))
+            TCPClientSocket.connect((serverIP, serverPort))
+            TCPClientSocket.sendall(bytesToSend)
 
         elif(msg.data[7] == 1.0):
             serverIP = "192.168.137.3"
-            msg = "increase"
+            msg = "P"
             bytesToSend = str.encode(msg)
-            UDPClientSocket.sendto(bytesToSend, (serverIP, serverPort))
+            TCPClientSocket.connect((serverIP, serverPort))
+            TCPClientSocket.sendall(bytesToSend)
 
             serverIP = "192.168.137.4"
-            msg = "increase"
+            msg = "P"
             bytesToSend = str.encode(msg)
-            UDPClientSocket.sendto(bytesToSend, (serverIP, serverPort))
+            TCPClientSocket.connect((serverIP, serverPort))
+            TCPClientSocket.sendall(bytesToSend)
 
         else:
             serverIP = "192.168.137.3"
-            msg = "stop"
+            msg = "S"
             bytesToSend = str.encode(msg)
-            UDPClientSocket.sendto(bytesToSend, (serverIP, serverPort))
+            TCPClientSocket.connect((serverIP, serverPort))
+            TCPClientSocket.sendall(bytesToSend)
 
             serverIP = "192.168.137.4"
-            msg = "stop"
+            msg = "S"
             bytesToSend = str.encode(msg)
-            UDPClientSocket.sendto(bytesToSend, (serverIP, serverPort))
-        return
+            TCPClientSocket.connect((serverIP, serverPort))
+            TCPClientSocket.sendall(bytesToSend)
 
 
     def __del__(self):
