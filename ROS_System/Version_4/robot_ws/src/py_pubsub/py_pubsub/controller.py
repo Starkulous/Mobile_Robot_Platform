@@ -31,100 +31,61 @@ class ControllerSubscriber(Node):
         self.get_logger().info("Received: {}".format(msg.data))
         
         TCPClientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        TCPClientSocket2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        
+        serverIP = "192.168.137.3"
+        serverIP2 = "192.168.137.4"
         serverPort = 8888
         bufferSize = 576
 
+        TCPClientSocket.connect((serverIP, serverPort))
+        TCPClientSocket2.connect((serverIP2, serverPort))
+
         if(msg.data[0] == 1.0):
-            serverIP = "192.168.137.3"
-            msg = "B"
+            msg = 'B'
             bytesToSend = str.encode(msg)
-            TCPClientSocket.connect((serverIP, serverPort))
-            TCPClientSocket.sendall(bytesToSend) 
-            
-            serverIP = "192.168.137.4"
-            msg = "B"
-            bytesToSend = str.encode(msg)
-            TCPClientSocket.connect((serverIP, serverPort))
             TCPClientSocket.sendall(bytesToSend)
+            TCPClientSocket2.sendall(bytesToSend)
+            print("Sent")
             
         elif(msg.data[1] == 1.0):
-            serverIP = "192.168.137.3"
-            msg = "R"
+            msg = 'R'
             bytesToSend = str.encode(msg)
-            TCPClientSocket.connect((serverIP, serverPort))
             TCPClientSocket.sendall(bytesToSend)
-
-            serverIP = "192.168.137.4"
-            msg = "R"
-            bytesToSend = str.encode(msg)
-            TCPClientSocket.connect((serverIP, serverPort))
-            TCPClientSocket.sendall(bytesToSend)
+            TCPClientSocket2.sendall(bytesToSend)
 
         elif(msg.data[3] == 1.0):
-            serverIP = "192.168.137.3"
-            msg = "L"
+            msg = 'L'
             bytesToSend = str.encode(msg)
-            TCPClientSocket.connect((serverIP, serverPort))
             TCPClientSocket.sendall(bytesToSend)
-
-            serverIP = "192.168.137.4"
-            msg = "L"
-            bytesToSend = str.encode(msg)
-            TCPClientSocket.connect((serverIP, serverPort))
-            TCPClientSocket.sendall(bytesToSend)
+            TCPClientSocket2.sendall(bytesToSend)
 
         elif(msg.data[4] == 1.0):
-            serverIP = "192.168.137.3"
-            msg = "F"
+            msg = 'F'
             bytesToSend = str.encode(msg)
-            TCPClientSocket.connect((serverIP, serverPort))
             TCPClientSocket.sendall(bytesToSend)
-
-            serverIP = "192.168.137.4"
-            msg = "F"
-            bytesToSend = str.encode(msg)
-            TCPClientSocket.connect((serverIP, serverPort))
-            TCPClientSocket.sendall(bytesToSend)
+            TCPClientSocket2.sendall(bytesToSend)
 
         elif(msg.data[6] == 1.0):
-            serverIP = "192.168.137.3"
-            msg = "N"
+            msg = 'N'
             bytesToSend = str.encode(msg)
-            TCPClientSocket.connect((serverIP, serverPort))
             TCPClientSocket.sendall(bytesToSend)
-
-            serverIP = "192.168.137.4"
-            msg = "N"
-            bytesToSend = str.encode(msg)
-            TCPClientSocket.connect((serverIP, serverPort))
-            TCPClientSocket.sendall(bytesToSend)
-
+            TCPClientSocket2.sendall(bytesToSend)
+        
         elif(msg.data[7] == 1.0):
-            serverIP = "192.168.137.3"
-            msg = "P"
+            msg = 'P'
             bytesToSend = str.encode(msg)
-            TCPClientSocket.connect((serverIP, serverPort))
             TCPClientSocket.sendall(bytesToSend)
-
-            serverIP = "192.168.137.4"
-            msg = "P"
-            bytesToSend = str.encode(msg)
-            TCPClientSocket.connect((serverIP, serverPort))
-            TCPClientSocket.sendall(bytesToSend)
+            TCPClientSocket2.sendall(bytesToSend)
 
         else:
-            serverIP = "192.168.137.3"
-            msg = "S"
+            msg = 'S'
             bytesToSend = str.encode(msg)
-            TCPClientSocket.connect((serverIP, serverPort))
             TCPClientSocket.sendall(bytesToSend)
+            TCPClientSocket2.sendall(bytesToSend)
 
-            serverIP = "192.168.137.4"
-            msg = "S"
-            bytesToSend = str.encode(msg)
-            TCPClientSocket.connect((serverIP, serverPort))
-            TCPClientSocket.sendall(bytesToSend)
-
+        TCPClientSocket.close()
+        TCPClientSocket2.close()
 
     def __del__(self):
 
