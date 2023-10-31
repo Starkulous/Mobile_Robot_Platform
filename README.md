@@ -46,6 +46,8 @@ I manually set Ubuntu's Ethernet TCP/IPv4 settings to:
 * Preferred DNS server: 8.8.8.8
 * Alternate DNS server: 4.4.4.4
 
+The nanos on the motor drivers have the Ip address: 192.168.137.3 and mac address {0x00 0x00 0x00 0x00 0x00 0x03} and 192.168.137.4 and mac address {0x00 0x00 0x00 0x00 0x00 0x04} respectivly.
+
 ## Step 3
 
 I then installed ROS Foxy using the link above.
